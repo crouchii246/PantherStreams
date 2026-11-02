@@ -18,7 +18,8 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        run: npm install
+  working-directory: ${{ github.workspace }}
+  run: npm install
 
       - name: Build Windows installer
         run: npm run dist:win
